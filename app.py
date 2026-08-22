@@ -626,8 +626,12 @@ else:
                 api_subscription_key=SARVAM_API_KEY
             )
 
+            audio_bytes = voice_audio.getvalue()
+            wav_file = io.BytesIO(audio_bytes)
+            wav_file.name = "voice.wav"
+
             response = client.speech_to_text.transcribe(
-                file=voice_audio,
+                file=wav_file,
                 model="saaras:v3",
                 language_code="unknown",
                 mode="transcribe",
@@ -1177,5 +1181,4 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
 
