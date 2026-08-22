@@ -632,7 +632,7 @@ else:
             wav_file.name = "voice.wav"
 
             response = client.speech_to_text.transcribe(
-                file=wav_file,
+                file=("voice.wav", wav_file, "audio/wav"),
                 model="saaras:v3",
                 language_code="unknown",
                 mode="transcribe",
@@ -1182,5 +1182,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
