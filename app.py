@@ -742,7 +742,6 @@ if st.session_state.voice_transcript:
                     "🎉 Voice transaction saved successfully!"
                 )
 
-                st.rerun()
 
     with vc2:
         if st.button(
